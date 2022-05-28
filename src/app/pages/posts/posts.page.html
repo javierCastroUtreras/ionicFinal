@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All Game News</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" routerLink="/new-post">
+        Add New Post
+      </ion-button>
+      <ion-button color="danger" (click)="onLogout()">
+        Logout
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher on-refresh="doRefresh()" ></ion-refresher> 
+  <ion-card *ngFor="let post of posts$|async" (click)="onPostClick(post.id)">
+    <div class="postImgDiv">
+    <img [src]="baseUrl + '/' +  post.image" class="postImg" />
+  </div>
+  <div class="post">
+    <ion-card-header>
+      <ion-card-title>{{post.title}}</ion-card-title>
+    </ion-card-header>
+   
+    </div>
+  </ion-card>
+</ion-content>

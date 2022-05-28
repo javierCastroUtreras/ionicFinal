@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update Post</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/posts"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form">
+    <ion-button *ngIf="!selectedImagePreview" class="file-choose ion-margin-bottom" (click)="imagePicker.click()">
+      <ion-icon name="image"></ion-icon>
+    </ion-button>
+    <div id="image" class="ion-margin-bottom" *ngIf="selectedImagePreview"
+      [style.background-image]="'url(' + selectedImagePreview + ')'" (click)="imagePicker.click()">
+    </div>
+    <input type="file" accept="image/x-png,image/jpeg" #imagePicker (change)="onImagePick($event)" hidden />
+    <ion-item>
+      <ion-input placeholder="Title" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea rows="5" placeholder="Description" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-button expand="block" class="ion-margin-top" (click)="onUpdate()">Update Post</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> <p class="letras" >LOGIN</p></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="form">
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="text"></ion-input>
+        </ion-item>
+        <ion-item class="item">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input class="input" formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-button color="medium" (click)="onLogin()" class="ion-margin-top" expand="block"> <p class="letras"> LOGIN </p></ion-button>
+      </form>
+      <ion-button color="medium"  class="ion-margin-top" routerLink="/register" expand="block" fill="outline">
+        <p class="letras"> CREATE ACCOUNT </p>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

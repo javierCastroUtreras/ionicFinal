@@ -1,0 +1,45 @@
+ion-content{
+    --ion-background-color:#FBF6EA;
+  }
+  
+  ion-header{
+    --ion-background-color:#EADFD5;
+  }
+  
+  
+  .postImg{
+      width: auto;
+      height: 300px;
+      object-fit: cover;
+  
+  }
+  
+  ion-title{
+    text-align: center;
+  }
+  
+  .grid{
+    text-align: center;
+    padding: 50;
+    color: #FF0000;
+  }
+  
+  .p{
+    color: #FF0000;
+    text-align: center;
+  }
+
+  
+.postImg{
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  background-color: transparent;
+
+}
+
+.postImgDiv {
+  text-align: center;
+  background-color: transparent;
+
+}

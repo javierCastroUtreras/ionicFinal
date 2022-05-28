@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/posts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{(post$|async)?.title}}</ion-title>
+    <ion-buttons slot="end" *ngIf="userId === (post$|async)?.user_id">
+      <ion-button color="primary" (click)="onPostDelete()">Delete</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" *ngIf="userId === (post$|async)?.user_id">
+      <ion-button color="primary" (click)="onPostEdit()">Edit</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="post$|async as post">
+    <div class="postImgDiv">
+
+    <img class="postImg" [src]="baseUrl +'/'+ post.image">
+  </div>
+    <div class="ion-padding-horizontal">
+      <h3>{{post.title}}</h3>
+      <p>{{post.description}}</p>
+    </div>
+  </div>
+
+  <div class="ion-padding-horizontal comment-section">
+    <h5>Comments</h5>
+    <ion-textarea [formControl]="commentCtrl"></ion-textarea>
+    <ion-button (click)="onPostComment()" [disabled]="commentCtrl.invalid">Post Comment</ion-button>
+  </div>
+  <ion-list>
+    <div *ngIf="comments$|async as comments; else loading">
+      <ion-item lines="none" *ngFor="let comment of comments">
+        <ion-label>
+          <ion-text><strong>{{comment.author}}</strong></ion-text>
+          <p>{{comment.text}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+    <ng-template #loading>
+      <ion-spinner></ion-spinner>
+    </ng-template>
+  </ion-list>
+</ion-content>

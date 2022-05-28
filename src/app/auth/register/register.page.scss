@@ -1,0 +1,42 @@
+ion-content {
+  --padding-top: 16vh;
+
+  ion-card-title {
+    text-align: center;
+  }
+}
+
+ion-content {
+  --padding-top: 16vh;
+  --ion-background-color:#000000;
+}
+
+
+  ion-card-title {
+    text-align: center;
+    color:#000000;
+  }
+
+  ion-card-header {
+    background-color:#EADFD5;
+  }
+
+  ion-card-content {
+    background-color:#EADFD5;
+  }
+
+  ion-input{
+    background-color:#EADFD5;
+  }
+  
+  .label{
+    background-color:#EADFD5;
+  }
+
+ion-input{
+  background-color: transparent;
+}
+
+.letras{
+  color: #8e4008;
+}
